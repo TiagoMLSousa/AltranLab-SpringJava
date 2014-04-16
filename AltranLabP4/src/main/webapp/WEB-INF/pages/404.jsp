@@ -15,7 +15,7 @@
     <body>
         <div class="container">
             <h1>Sorry! We couldn't find what you are looking for.<br/> 
-                If you are lost, follow back to <a href="/AltranLabP3/welcome">home</a></h1>
+                If you are lost, follow back to <a href="/AltranLabP4/welcome">home</a></h1>
         </div>
     </body>
 </html>

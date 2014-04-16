@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
@@ -10,12 +9,14 @@
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Not Found!</title>
+        <title>Welcome to Altran Lab - Spring!</title>
     </head>
     <body>
         <div class="container">
-            <h1>Sorry! We couldn't find what you are looking for.<br/> 
-                If you are lost, follow back to <a href="/AltranLabP3/welcome">home</a></h1>
+            <div class="jumbotron">
+                <h1>Welcome to Altran Lab - Spring!</h1>
+                <p clas="lead">${message}</p>
+            </div>
         </div>
     </body>
 </html>

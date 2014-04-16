@@ -14,8 +14,8 @@
     <body>
         <div class="container">
             <div class="jumbotron">
-            <h1>Welcome to Altran Lab - Spring!</h1>
-            <p clas="lead">${message}</p>
+                <h1>Welcome to Altran Lab - Spring!</h1>
+                <p clas="lead">${message}</p>
             </div>
         </div>
     </body>
