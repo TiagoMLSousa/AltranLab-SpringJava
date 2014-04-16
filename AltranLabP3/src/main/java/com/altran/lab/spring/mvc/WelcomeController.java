@@ -4,15 +4,11 @@
  */
 package com.altran.lab.spring.mvc;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
 
 /**
  *
@@ -33,9 +29,9 @@ public class WelcomeController {
         return "welcome";
     }
     
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/{username}", method = RequestMethod.GET)
     public String welcomeUser(
-                @RequestParam/*(value = "username")*/ 
+                @PathVariable/*(value = "username")*/ 
                     String username,
                 Model model) {
         
