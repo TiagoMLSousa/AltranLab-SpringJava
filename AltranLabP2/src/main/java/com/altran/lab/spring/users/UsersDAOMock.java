@@ -16,22 +16,16 @@ import org.springframework.stereotype.Component;
 public class UsersDAOMock implements IUsersDAO {
     private static List<User> users = null;
     
-    private void initialize() { initialize(false); }
-    private void initialize(boolean forceRefresh)
-    {
-        if(users == null || forceRefresh)
-        {
+    public UsersDAOMock() {
             users = new ArrayList<User>();
             users.add(new User(1, "Teste 1", "1990-02-01", "teste1@altran.com", null, "user1", "password"));
             users.add(new User(2, "Teste 2", "1980-03-11", "teste2@altran.com", null, "user2", "password"));
             users.add(new User(3, "Teste 3", "1985-07-26", "teste3@altran.com", null, "user3", "password"));
-        }
     }
 
     @Override
     public User getUserByUsername(String username) {
-        initialize();
-        
+       
         for(User user : users)
             if(user.getUsername() != null 
                && user.getUsername().compareToIgnoreCase(username) == 0)
@@ -42,16 +36,12 @@ public class UsersDAOMock implements IUsersDAO {
 
     @Override
     public boolean createUser(User user) {
-        initialize();
-        
-        return users.add(user);
+       return users.add(user);
     }
 
     @Override
     public List<User> getUsers() {
-        initialize();
-        
-        return users;
+       return users;
     }
        
 }
