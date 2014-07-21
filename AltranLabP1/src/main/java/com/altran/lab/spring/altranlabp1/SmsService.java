@@ -8,7 +8,7 @@ package com.altran.lab.spring.altranlabp1;
  *
  * @author Altran
  */
-public class SmsService implements IMessageService {
+public class SmsService implements MessageService {
     @Override
     public void sendMessage(String msg, String rec) {
         //logic to send SMS

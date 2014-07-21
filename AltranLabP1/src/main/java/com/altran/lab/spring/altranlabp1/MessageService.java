@@ -8,6 +8,6 @@ package com.altran.lab.spring.altranlabp1;
  *
  * @author Altran
  */
-public interface IMessageService {
+public interface MessageService {
     void sendMessage(String msg, String rec); 
 }

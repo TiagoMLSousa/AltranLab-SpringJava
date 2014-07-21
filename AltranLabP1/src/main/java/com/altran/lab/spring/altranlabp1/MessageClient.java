@@ -9,21 +9,21 @@ package com.altran.lab.spring.altranlabp1;
  * @author Altran
  */
 
-public class MessageConsumer {
+public class MessageClient {
     
-    private IMessageService service;
+    private MessageService service;
 
-    public MessageConsumer() { }
+    public MessageClient() { }
     
-    public MessageConsumer(IMessageService service) {
+    public MessageClient(MessageService service) {
         this.service = service;
     }
     
-    public IMessageService getMessageService() {
+    public MessageService getMessageService() {
         return service;
     }
 
-    public void setMessageService(IMessageService service) {
+    public void setMessageService(MessageService service) {
         this.service = service;
     }
 
