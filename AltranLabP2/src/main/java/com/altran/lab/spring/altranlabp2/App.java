@@ -17,15 +17,18 @@ public class App
         /* Annotations */
         AnnotationConfigApplicationContext annotationConfigContext = new AnnotationConfigApplicationContext(SpringBeansContainer.class);
 
-        IConsumer consumer1 = classPathXmlContext.getBean("emailConsumer", IConsumer.class);
-        IConsumer consumer2 = classPathXmlContext.getBean("smsConsumer", IConsumer.class);
+        MessageClient client1 = classPathXmlContext.getBean("emailClient", MessageClient.class);
+        MessageClient client2 = classPathXmlContext.getBean("smsClient", MessageClient.class);
         
-        IConsumer consumer3 = annotationConfigContext.getBean("emailConsumer", IConsumer.class);
-        IConsumer consumer4 = annotationConfigContext.getBean("smsConsumer", IConsumer.class);
+        MessageClient client3 = annotationConfigContext.getBean("emailClient", MessageClient.class);
+        MessageClient client4 = annotationConfigContext.getBean("smsClient", MessageClient.class);
+
         
-        consumer1.processMessages(" Hello 1! ", "recipient 1");
-        consumer2.processMessages(" Hello 2! ", "recipient 2");
-        consumer3.processMessages(" Hello 3! ", "recipient 3");
-        consumer4.processMessages(" Hello 4! ", "recipient 4");
+        // outputs
+        
+        client1.processMessages(" Hello from XML 1! ", "recipient 1");
+        client2.processMessages(" Hello from XML 2! ", "recipient 2");
+        client3.processMessages(" Hello from Annotation 3! ", "recipient 3");
+        client4.processMessages(" Hello from Annotation 4! ", "recipient 4");
     }
 }

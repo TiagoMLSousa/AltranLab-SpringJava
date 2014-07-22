@@ -17,24 +17,24 @@ import org.springframework.context.annotation.Configuration;
 public class SpringBeansContainer {
 
   @Bean
-  public IConsumer emailConsumer() {
-      MessageConsumer consumer = new MessageConsumer();
+  public MessageClient emailClient() {
+      MessageClient consumer = new MessageClient();
       consumer.setMessageService(emailService());
       return consumer;
   }
   
   @Bean
-  public IConsumer smsConsumer() {
-      return new MessageConsumer(smsService());
+  public MessageClient smsClient() {
+      return new MessageClient(smsService());
   }
   
   @Bean
-  public IMessageService emailService() {
+  public MessageService emailService() {
       return new EmailService();
   }
   
   @Bean
-  public IMessageService smsService() {
+  public MessageService smsService() {
       return new SmsService();
   }
 }

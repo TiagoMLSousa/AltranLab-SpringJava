@@ -4,30 +4,32 @@
  */
 package com.altran.lab.spring.altranlabp2;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 /**
  *
  * @author Altran
  */
 
-public class MessageConsumer implements IConsumer {
+public class MessageClient {
     
-    private IMessageService service;
+    private MessageService service;
 
-    public MessageConsumer() { }
+    public MessageClient() { }
     
-    public MessageConsumer(IMessageService service) {
+    public MessageClient(MessageService service) {
         this.service = service;
     }
     
-    public IMessageService getMessageService() {
+    public MessageService getMessageService() {
         return service;
     }
 
-    public void setMessageService(IMessageService service) {
+    public void setMessageService(MessageService service) {
         this.service = service;
     }
 
-    @Override
     public void processMessages(String msg, String rec){
         //do some msg validation, manipulation logic etc
         this.service.sendMessage(msg, rec);

@@ -12,13 +12,13 @@
     <!-- Bean do SmsService -->
     <bean id="smsService" class="com.altran.lab.spring.altranlabp2.SmsService" />
     
-    <!-- Injeção por construtor -->
-    <bean id="emailConsumer" class="com.altran.lab.spring.altranlabp2.MessageConsumer">
+    <!-- Injeção por setter -->
+    <bean id="emailClient" class="com.altran.lab.spring.altranlabp2.MessageClient">
         <property name="messageService" ref="emailService" />
     </bean>
     
-    <!-- Injeção por setter -->
-    <bean id="smsConsumer" class="com.altran.lab.spring.altranlabp2.MessageConsumer">
+    <!-- Injeção por construtor -->
+    <bean id="smsClient" class="com.altran.lab.spring.altranlabp2.MessageClient">
         <constructor-arg ref="smsService" />
     </bean>
 </beans>
