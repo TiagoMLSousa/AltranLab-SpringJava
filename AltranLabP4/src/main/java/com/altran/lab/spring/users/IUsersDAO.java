@@ -12,8 +12,6 @@ import java.util.List;
  */
 public interface IUsersDAO {
     List<User> getUsers();
-    
     User getUserByUsername(String username);
-    
     boolean createUser(User user);
 }

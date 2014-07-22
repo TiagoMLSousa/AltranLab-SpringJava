@@ -20,11 +20,11 @@
             <form:form modelAttribute="user">
                 <div class="form">
                     <div class="form-group">
-                        <form:label path="name">Name</form:label>
-                        <form:input path="name" cssClass="form-control" readonly="true" /> 
+                        Name:<br>
+                        ${user.name}
                     </div>
                     <div class="form-group">
-                        <form:label path="birthday">Birthday</form:label>
+                        Birthday:
                         <form:input path="birthday" cssClass="form-control" readonly="true" />
                     </div>
                     <div class="form-group">
@@ -35,7 +35,7 @@
                         <form:label path="phonenumber">Telephone</form:label>
                         <form:input path="phonenumber" cssClass="form-control" readonly="true" />
                     </div>
-                </table>  
+                </div>
             </form:form>
         </div>
     </body>

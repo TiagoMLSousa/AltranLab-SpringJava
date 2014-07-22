@@ -6,9 +6,9 @@ package com.altran.lab.spring.mvc;
 
 import com.altran.lab.spring.users.IUsersDAO;
 import com.altran.lab.spring.users.User;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +21,15 @@ public class UsersController {
     @Autowired(required = true)
     IUsersDAO usersDAO;
     
-    @RequestMapping(value = "/get/{username}", method = RequestMethod.GET)
+    @RequestMapping
+    public String users(ModelMap model) {
+        List<User> users = usersDAO.getUsers();
+        model.put("users", users);
+        return "users";
+    }
+    
+    
+    @RequestMapping(value = "/{username}", method = RequestMethod.GET)
     public String user(@PathVariable String username, ModelMap model) {
         
         User user = usersDAO.getUserByUsername(username);
