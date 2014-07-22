@@ -21,6 +21,9 @@
             <c:forEach items="${users}" var="user">
                 <div class="lead">#${user.id} - <a href="/AltranLabP4/users/${user.username}">${user.name}</a></div>
             </c:forEach> 
+                <div>
+                    <a href="/AltranLabP4/users/new">new user</a>
+                </div>
         </div>
     </body>
 </html>

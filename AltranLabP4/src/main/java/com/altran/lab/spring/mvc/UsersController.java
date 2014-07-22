@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,18 +29,27 @@ public class UsersController {
         return "users";
     }
     
-    
     @RequestMapping(value = "/{username}", method = RequestMethod.GET)
     public String user(@PathVariable String username, ModelMap model) {
-        
         User user = usersDAO.getUserByUsername(username);
         
-        if(user == null)
-            return "404";
+        if(user == null) {
+            throw new IllegalArgumentException("User not found");
+        }
         
         model.addAttribute("user", user);
-        
         return "user";
     }
     
+    @RequestMapping(value = "/new", method = RequestMethod.GET)
+    public String getNewForm(ModelMap model) {
+        model.put("user", new User());
+        return "create_user";
+    }
+    
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String createUser(@ModelAttribute User user, ModelMap model) {
+        usersDAO.createUser(user);
+        return "redirect:/users";
+    }
 }
