@@ -21,7 +21,7 @@ public class WelcomeController {
     public WelcomeController() {
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping
     public String welcome(Model model) {
         
         model.addAttribute("message", "Hello annonymous user! Welcome to our website!");
