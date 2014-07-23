@@ -10,8 +10,8 @@ import java.util.List;
  *
  * @author Altran
  */
-public interface IUsersDAO {
-    List<User> getUsers();
+public interface UsersDAO {
+    List<User> findAll();
     User getUserByUsername(String username);
-    boolean createUser(User user);
+    User save(User user);
 }

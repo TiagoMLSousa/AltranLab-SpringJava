@@ -13,23 +13,16 @@ import java.util.List;
 public class User {
     private int id;
     private String name;
-    private String birthday;
-    
     private String emailaddress;
-    private String phonenumber;
-    
     private String username;
     private String password;
 
-    public User() {
-    }
+    public User() { }
 
-    public User(int id, String name, String birthday, String emailaddress, String phonenumber, String username, String password) {
+    public User(int id, String name, String emailaddress, String username, String password) {
         this.id = id;
         this.name = name;
-        this.birthday = birthday;
         this.emailaddress = emailaddress;
-        this.phonenumber = phonenumber;
         this.username = username;
         this.password = password;
     }
@@ -63,20 +56,6 @@ public class User {
     }
 
     /**
-     * @return the birthday
-     */
-    public String getBirthday() {
-        return birthday;
-    }
-
-    /**
-     * @param birthday the birthday to set
-     */
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    /**
      * @return the emailaddress
      */
     public String getEmailaddress() {
@@ -88,20 +67,6 @@ public class User {
      */
     public void setEmailaddress(String emailaddress) {
         this.emailaddress = emailaddress;
-    }
-
-    /**
-     * @return the phonenumber
-     */
-    public String getPhonenumber() {
-        return phonenumber;
-    }
-
-    /**
-     * @param phonenumber the phonenumber to set
-     */
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
     }
 
     /**

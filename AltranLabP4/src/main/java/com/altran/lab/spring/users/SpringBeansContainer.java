@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 public class SpringBeansContainer {
 
   @Bean
-  public IUsersDAO usersDAO() {
+  public UsersDAO usersDAO() {
       return new UsersDAOMock();
   }
   

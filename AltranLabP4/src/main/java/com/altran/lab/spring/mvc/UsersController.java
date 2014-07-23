@@ -4,7 +4,7 @@
  */
 package com.altran.lab.spring.mvc;
 
-import com.altran.lab.spring.users.IUsersDAO;
+import com.altran.lab.spring.users.UsersDAO;
 import com.altran.lab.spring.users.User;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UsersController {
     
     @Autowired(required = true)
-    IUsersDAO usersDAO;
+    UsersDAO usersDAO;
     
     @RequestMapping
     public String users(ModelMap model) {
-        List<User> users = usersDAO.getUsers();
+        List<User> users = usersDAO.findAll();
         model.put("users", users);
         return "users";
     }
@@ -49,7 +49,7 @@ public class UsersController {
     
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String createUser(@ModelAttribute User user, ModelMap model) {
-        usersDAO.createUser(user);
+        usersDAO.save(user);
         return "redirect:/users";
     }
 }
