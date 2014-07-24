@@ -1,9 +1,16 @@
-/AltranLabP1/target/
-/AltranLabP2/target/
-/AltranLabP3/target/
-/AltranLabP4/target/
-/AltranLabP5/target/
-/AltranLabP6/target/
+glassfish-web.xml
+
+#################
+## Netbeans
+#################
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+target/
 
 #################
 ## Eclipse
