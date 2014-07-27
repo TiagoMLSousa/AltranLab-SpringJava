@@ -1,0 +1,5 @@
+1 - Correr src/main/resources/CreateUsersScript.sql no MySQL server
+
+2 - Criar com.altran.lab.spring.data JdbcUsersDAO
+
+3 - Criar com.altran.lab.spring.data JpaUsersDAO

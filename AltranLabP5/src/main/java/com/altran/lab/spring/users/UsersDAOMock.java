@@ -22,6 +22,11 @@ public class UsersDAOMock implements UsersDAO {
     }
     
     @Override
+    public List<User> getAll() {
+        return users;
+    }
+       
+    @Override
     public User getUserByUsername(String username) {
 
         for(User user : users)
@@ -38,9 +43,4 @@ public class UsersDAOMock implements UsersDAO {
         return user;
     }
 
-    @Override
-    public List<User> findAll() {
-        return users;
-    }
-       
 }
