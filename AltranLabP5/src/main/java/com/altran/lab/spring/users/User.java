@@ -4,8 +4,6 @@
  */
 package com.altran.lab.spring.users;
 
-import java.util.List;
-
 /**
  *
  * @author Altran

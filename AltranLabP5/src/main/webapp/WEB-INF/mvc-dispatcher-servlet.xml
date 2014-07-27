@@ -19,7 +19,13 @@
 		</property>
 	</bean>
 
-        <!-- SPRING DATA JDBC -->
+        <!-- SPRING DATA -->
+
+        <!-- <bean id="usersDAO" class="com.altran.lab.spring.users.JdbcUsersDAO">
+            <property name="dataSource" ref="dataSource" />
+        </bean> -->
+            
+        <!-- <bean id="usersDAO" class="com.altran.lab.spring.users.JpaUsersDAO" /> -->
 
         <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
             <property name="driverClassName" value="${jdbc.driverClassName}"/>
