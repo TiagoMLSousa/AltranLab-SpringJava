@@ -1,5 +1,13 @@
 1 - Correr src/main/resources/CreateUsersScript.sql no MySQL server
 
-2 - Criar com.altran.lab.spring.data JdbcUsersDAO
+2 - Criar com.altran.lab.spring.users.JdbcUsersDAO
 
-3 - Criar com.altran.lab.spring.data JpaUsersDAO
+3 - Altrar beans config "WEB-INF/mvc-dispatcher-servlet"
+
+4 - Alterar SpringBeansContainer para retornar nova implementação do UsersDAO (com.altran.lab.spring.users.JdbcUsersDAO)
+
+5 - Correr projecto
+
+6 - Criar com.altran.lab.spring.users.JpaUsersDAO
+
+7 - Adicionar notações JPA ao Users.java
