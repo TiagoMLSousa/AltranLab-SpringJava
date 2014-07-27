@@ -17,7 +17,7 @@ public class SpringBeansContainer {
 
   @Bean
   public UsersDAO usersDAO() {
-      return new UsersDAOMock();
+      return new JdbcUsersDAO();
   }
   
 }

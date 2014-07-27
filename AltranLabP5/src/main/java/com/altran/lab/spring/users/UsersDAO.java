@@ -11,7 +11,7 @@ import java.util.List;
  * @author Altran
  */
 public interface UsersDAO {
-    List<User> findAll();
+    List<User> getAll();
     User getUserByUsername(String username);
     User save(User user);
 }

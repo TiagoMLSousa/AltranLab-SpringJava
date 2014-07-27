@@ -20,32 +20,23 @@
             <form:form modelAttribute="user" action="add">
                 <div class="form">
                     <div class="form-group">
-                        <form:label path="id">Id</form:label>
-                        <form:input path="id" cssClass="form-control"  /> 
-                    </div>
-                    <div class="form-group">
-                        <form:label path="username">Username</form:label>
-                        <form:input path="username" cssClass="form-control"  /> 
-                    </div>
-                    <div class="form-group">
                         <form:label path="name">Name</form:label>
-                        <form:input path="name" cssClass="form-control"  /> 
-                    </div>
-                    <div class="form-group">
-                        <form:label path="birthday">Birthday</form:label>
-                        <form:input path="birthday" cssClass="form-control"  />
+                        <form:input path="name" cssClass="form-control" readonly="true" /> 
                     </div>
                     <div class="form-group">
                         <form:label path="emailaddress">Email</form:label>
-                        <form:input path="emailaddress" cssClass="form-control"  />
+                        <form:input path="emailaddress" cssClass="form-control" readonly="true" />
                     </div>
                     <div class="form-group">
-                        <form:label path="phonenumber">Telephone</form:label>
-                        <form:input path="phonenumber" cssClass="form-control" />
+                        <form:label path="username">Username</form:label>
+                        <form:input path="username" cssClass="form-control" readonly="true" /> 
                     </div>
-                     <input type="submit" value="Submit"/>
-                      <a href="/AltranLabP4/users/">back</a>
+                    <div class="form-group">
+                        <form:label path="password">Password</form:label>
+                        <form:input path="password" cssClass="form-control" readonly="true" /> 
+                    </div>
                 </div>
+                <a href="../users/">back</a>
             </form:form>
         </div>
     </body>

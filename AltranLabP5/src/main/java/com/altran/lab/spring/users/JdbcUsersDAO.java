@@ -31,7 +31,7 @@ public class JdbcUsersDAO implements UsersDAO {
             @Override
             public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                 User user = new User();
-                user.setId(rs.getInt("name"));
+                user.setId(rs.getInt("id"));
                 user.setName(rs.getString("name"));
                 user.setEmailaddress(rs.getString("emailaddress"));
                 user.setUsername(rs.getString("username"));
@@ -40,6 +40,7 @@ public class JdbcUsersDAO implements UsersDAO {
             }
         };
     
+    @Override
     public List<User> getAll() {
         List<User> users = this.jdbcTemplate.query(
             "select * from Users",
@@ -48,6 +49,7 @@ public class JdbcUsersDAO implements UsersDAO {
         return users;
     }
     
+    @Override
     public User getUserByUsername(String username) {
         User user = this.jdbcTemplate.queryForObject(
             "select * from Users where username = ?",
@@ -57,6 +59,7 @@ public class JdbcUsersDAO implements UsersDAO {
         return user;
     }
     
+    @Override
     public User save(User user) {
         int rowCount = 
             this.jdbcTemplate.update(
