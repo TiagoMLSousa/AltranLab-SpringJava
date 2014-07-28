@@ -4,11 +4,17 @@
  */
 package com.altran.lab.spring.users;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author Altran
  */
-public class User {
+@Entity
+public class User implements Serializable {
+    @Id
     private int id;
     private String name;
     private String emailaddress;
