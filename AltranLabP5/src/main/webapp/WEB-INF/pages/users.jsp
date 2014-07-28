@@ -19,10 +19,10 @@
         <div class="container">
             <h1>Users</h1>
             <c:forEach items="${users}" var="user">
-                <div class="lead">#${user.id} - <a href="users/${user.username}/">${user.name}</a></div>
+                <div class="lead">#${user.id} - <a href="/AltranLabP5/users/${user.username}/">${user.name}</a></div>
             </c:forEach> 
             <div>
-                <a href="users/new">new user</a>
+                <a href="/AltranLabP5/users/new">new user</a>
             </div>
         </div>
     </body>

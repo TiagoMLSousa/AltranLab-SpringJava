@@ -21,22 +21,23 @@
                 <div class="form">
                     <div class="form-group">
                         <form:label path="name">Name</form:label>
-                        <form:input path="name" cssClass="form-control" readonly="true" /> 
+                        <form:input path="name" cssClass="form-control" /> 
                     </div>
                     <div class="form-group">
                         <form:label path="emailaddress">Email</form:label>
-                        <form:input path="emailaddress" cssClass="form-control" readonly="true" />
+                        <form:input path="emailaddress" cssClass="form-control" />
                     </div>
                     <div class="form-group">
                         <form:label path="username">Username</form:label>
-                        <form:input path="username" cssClass="form-control" readonly="true" /> 
+                        <form:input path="username" cssClass="form-control" /> 
                     </div>
                     <div class="form-group">
                         <form:label path="password">Password</form:label>
-                        <form:input path="password" cssClass="form-control" readonly="true" /> 
+                        <form:input path="password" cssClass="form-control" /> 
                     </div>
+                    <input type="submit" value="Submit"/>
                 </div>
-                <a href="../users/">back</a>
+                <a href="/AltranLabP5/users/">back</a>
             </form:form>
         </div>
     </body>
