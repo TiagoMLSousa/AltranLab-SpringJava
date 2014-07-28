@@ -24,12 +24,12 @@ public class UsersController {
     
     @RequestMapping
     public String users(ModelMap model) {
-        List<User> users = usersDAO.findAll();
+        List<User> users = usersDAO.getAll();
         model.put("users", users);
         return "users";
     }
     
-    @RequestMapping(value = "/{username}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{username}/", method = RequestMethod.GET)
     public String user(@PathVariable String username, ModelMap model) {
         User user = usersDAO.getUserByUsername(username);
         

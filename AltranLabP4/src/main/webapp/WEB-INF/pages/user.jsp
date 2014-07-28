@@ -24,19 +24,15 @@
                         <form:input path="name" cssClass="form-control" readonly="true" /> 
                     </div>
                     <div class="form-group">
-                        <form:label path="birthday">Birthday</form:label>
-                        <form:input path="birthday" cssClass="form-control" readonly="true" />
-                    </div>
-                    <div class="form-group">
                         <form:label path="emailaddress">Email</form:label>
                         <form:input path="emailaddress" cssClass="form-control" readonly="true" />
                     </div>
                     <div class="form-group">
-                        <form:label path="phonenumber">Telephone</form:label>
-                        <form:input path="phonenumber" cssClass="form-control" readonly="true" />
+                        <form:label path="username">Username</form:label>
+                        <form:input path="username" cssClass="form-control" readonly="true" /> 
                     </div>
                 </div>
-                     <a href="/AltranLabP4/users/">back</a>
+                <a href="/AltranLabP4/users/">back</a>
             </form:form>
         </div>
     </body>

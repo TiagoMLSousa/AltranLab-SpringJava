@@ -31,10 +31,6 @@
                         <form:label path="username">Username</form:label>
                         <form:input path="username" cssClass="form-control" readonly="true" /> 
                     </div>
-                    <div class="form-group">
-                        <form:label path="password">Password</form:label>
-                        <form:input path="password" cssClass="form-control" readonly="true" /> 
-                    </div>
                 </div>
                 <a href="/AltranLabP5/users/">back</a>
             </form:form>

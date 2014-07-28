@@ -6,11 +6,13 @@ package com.altran.lab.spring.users;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Altran
  */
+@Component
 public class UsersDAOMock implements UsersDAO {
     private static List<User> users = null;
     
@@ -39,7 +41,7 @@ public class UsersDAOMock implements UsersDAO {
     }
 
     @Override
-    public List<User> findAll() {
+    public List<User> getAll() {
         return users;
     }
        
