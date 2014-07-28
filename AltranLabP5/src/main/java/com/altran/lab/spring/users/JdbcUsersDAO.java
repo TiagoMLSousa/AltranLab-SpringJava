@@ -60,16 +60,10 @@ public class JdbcUsersDAO implements UsersDAO {
     
     @Override
     public User save(User user) {
-        int rowCount = 
-            this.jdbcTemplate.update(
-                "update Users set (name, emailaddress, username, password) values (?, ?, ?, ?)", 
-                user.getName(), user.getEmailaddress(), user.getUsername(), user.getPassword());
-        
-        if(rowCount == 0)
-            this.jdbcTemplate.update(
-                "insert into Users (name, emailaddress, username, password) values (?, ?, ?, ?)", 
-                user.getName(), user.getEmailaddress(), user.getUsername(), user.getPassword());
-        
+        this.jdbcTemplate.update(
+            "insert into Users (name, emailaddress, username, password) values (?, ?, ?, ?)", 
+            user.getName(), user.getEmailaddress(), user.getUsername(), user.getPassword());
+
         return user;
     }
 }
