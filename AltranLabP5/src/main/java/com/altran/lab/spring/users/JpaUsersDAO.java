@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 
 @Repository
-@Transactional(propagation = Propagation.REQUIRES_NEW)
 public class JpaUsersDAO implements UsersDAO {
     
     @PersistenceUnit
@@ -39,21 +38,18 @@ public class JpaUsersDAO implements UsersDAO {
     @Override
     public List<User> getAll() {
         // native
-        //EntityManager em = emf.createEntityManager();
         List<User> users = em.createNativeQuery("select * from Users", User.class)
                 .getResultList();
         return users;
     }
     
     public User getUserById(int id) {
-        //EntityManager em = emf.createEntityManager();
         return em.find(User.class, id);
     }
 
     @Override
     public User getUserByUsername(String username) {
         System.out.println(username);
-        //EntityManager em = emf.createEntityManager();
         return (User) em.createQuery("select user from User user where user.username=:username")
                .setParameter("username", username)
                .getSingleResult();
