@@ -36,7 +36,7 @@
                         <form:input path="password" cssClass="form-control" readonly="true" /> 
                     </div>
                 </div>
-                <a href="../users/">back</a>
+                <a href="/AltranLabP5/users/">back</a>
             </form:form>
         </div>
     </body>
