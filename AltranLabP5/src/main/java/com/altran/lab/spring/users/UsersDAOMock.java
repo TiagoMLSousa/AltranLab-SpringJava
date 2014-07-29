@@ -43,4 +43,9 @@ public class UsersDAOMock implements UsersDAO {
         return user;
     }
 
+    @Override
+    public void delete(User user) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

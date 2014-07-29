@@ -1,13 +1,9 @@
 package com.altran.lab.spring.users;
 
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
  
 /**
  * 
@@ -15,51 +11,40 @@ import org.springframework.transaction.annotation.Transactional;
  */
 
 @Repository
-public class JpaUsersDAO implements UsersDAO {
+public class JpaUsersDAO  implements UsersDAO {
     
-    @PersistenceUnit
-    private EntityManagerFactory emf;
     
-    private EntityManager em;
-    
-    public EntityManagerFactory getEmf() {
-        return emf;
-    }
-
-    public void setEmf(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-
-    @PostConstruct
-    public void init() {
-        em = emf.createEntityManager();
-    }
+   @PersistenceContext
+   private EntityManager entityManager;
     
     @Override
     public List<User> getAll() {
         // native
-        List<User> users = em.createNativeQuery("select * from Users", User.class)
+        List<User> users = entityManager.createNativeQuery("select * from Users", User.class)
                 .getResultList();
         return users;
     }
     
     public User getUserById(int id) {
-        return em.find(User.class, id);
+        return entityManager.find(User.class, id);
     }
 
     @Override
     public User getUserByUsername(String username) {
         System.out.println(username);
-        return (User) em.createQuery("select user from User user where user.username=:username")
+        return (User) entityManager.createQuery("select user from User user where user.username=:username")
                .setParameter("username", username)
                .getSingleResult();
     }
 
     @Override
     public User save(User user) {
-        em.getTransaction().begin();
-        em.persist(user);
-        em.getTransaction().commit();
+        entityManager.persist(user);
         return user;
+    }
+    
+   @Override
+    public void delete(User user) {
+        entityManager.remove(user);
     }
 }

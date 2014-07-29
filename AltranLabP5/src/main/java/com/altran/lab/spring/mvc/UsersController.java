@@ -56,4 +56,11 @@ public class UsersController {
         usersDAO.save(user);
         return "redirect:/users";
     }
+    
+    @RequestMapping(value = "/delete/{username}/", method = RequestMethod.GET)
+    public String deleteUser(@PathVariable String username, ModelMap model) {
+        User user = usersDAO.getUserByUsername(username);
+        usersDAO.delete(user);
+        return "redirect:/users";
+    }
 }

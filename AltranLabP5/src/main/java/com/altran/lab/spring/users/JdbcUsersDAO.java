@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import javax.sql.DataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -65,5 +64,10 @@ public class JdbcUsersDAO implements UsersDAO {
             user.getName(), user.getEmailaddress(), user.getUsername(), user.getPassword());
 
         return user;
+    }
+
+    @Override
+    public void delete(User user) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
