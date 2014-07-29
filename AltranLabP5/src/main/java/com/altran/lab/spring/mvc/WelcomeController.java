@@ -15,13 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Altran
  */
 @Controller
-@RequestMapping("/welcome")
 public class WelcomeController {
     
     public WelcomeController() {
     }
-
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    
+    @RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
     public String welcome(Model model) {
         
         model.addAttribute("message", "Hello annonymous user! Welcome to our website!");
@@ -29,7 +28,7 @@ public class WelcomeController {
         return "welcome";
     }
     
-    @RequestMapping(value = "/user/{username}", method = RequestMethod.GET)
+    @RequestMapping(value = "/welcome/user/{username}", method = RequestMethod.GET)
     public String welcomeUser(
                 @PathVariable/*(value = "username")*/ 
                     String username,

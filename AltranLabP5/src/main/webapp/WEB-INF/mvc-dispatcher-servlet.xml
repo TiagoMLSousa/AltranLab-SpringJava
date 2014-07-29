@@ -36,7 +36,7 @@
 
     <!-- JPA -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-        <property name="persistenceUnitName" value="spring_framework_PU"/>
+        <property name="persistenceUnitName" value="altranspring_PU"/>
     </bean>
         
     <bean id="transactionManager"  class="org.springframework.orm.jpa.JpaTransactionManager">

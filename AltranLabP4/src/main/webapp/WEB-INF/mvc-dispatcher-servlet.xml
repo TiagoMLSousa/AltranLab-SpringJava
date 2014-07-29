@@ -36,7 +36,7 @@
     <!-- JPA -->
     <!--
     <bean id="emf" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-        <property name="persistenceUnitName" value="spring_framework_PU"/>
+        <property name="persistenceUnitName" value="altranspring_PU"/>
     </bean> 
     -->
 </beans>
