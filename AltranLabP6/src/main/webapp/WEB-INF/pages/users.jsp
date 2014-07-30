@@ -20,7 +20,7 @@
         <div class="container">
             <sec:authorize access="isAuthenticated()">
                 <div style=" float: right">
-                    <form action="../j_spring_security_logout" method="post" id="logoutForm">
+                    <form action="j_spring_security_logout" method="post" id="logoutForm">
                         <input type="hidden" name="${_csrf.parameterName}"
                                value="${_csrf.token}" />
                         <input type="submit" value="Logout"/>

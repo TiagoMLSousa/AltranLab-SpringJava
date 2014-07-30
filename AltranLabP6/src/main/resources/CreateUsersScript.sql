@@ -18,5 +18,5 @@ INSERT IGNORE INTO Users (name, emailaddress, username, password)
 	VALUES ('Consultor 1', 'consultor.1@altran.com', 'consultor.1', 'altran123');
 
 
-insert into user_roles (username, userRole) values ("pedro.costa", "ADMIN_ROLE");
-insert into user_roles (username, userRole) values ("tiago.sousa", "USER_ROLE");
+insert into user_roles (username, userRole) values ("pedro.costa", "ROLE_ADMIN");
+insert into user_roles (username, userRole) values ("tiago.sousa", "ROLE_USER");

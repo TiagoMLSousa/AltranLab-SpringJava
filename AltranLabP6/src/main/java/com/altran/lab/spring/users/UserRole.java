@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Role;
 @Entity
 @Table (name = "user_roles")
 public class UserRole implements Serializable {
-    public enum Role {ADMIN_ROLE, USER_ROLE}
+    public enum Role {ROLE_ADMIN, ROLE_USER}
     
     @Id
     private String username;
