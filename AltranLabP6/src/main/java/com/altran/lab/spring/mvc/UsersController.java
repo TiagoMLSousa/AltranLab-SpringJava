@@ -16,51 +16,69 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @Transactional
 @RequestMapping("/users")
 public class UsersController {
-    
+
     @Autowired(required = true)
     @Qualifier(value = "jpaUsersDAO")
     UsersDAO usersDAO;
-    
+
     @RequestMapping
     public String users(ModelMap model) {
         List<User> users = usersDAO.getAll();
         model.put("users", users);
         return "users";
     }
-    
+
     @RequestMapping(value = "/{username}/", method = RequestMethod.GET)
     public String user(@PathVariable String username, ModelMap model) {
         User user = usersDAO.getUserByUsername(username);
-        
-        if(user == null) {
+
+        if (user == null) {
             throw new IllegalArgumentException("User not found");
         }
-        
+
         model.addAttribute("user", user);
         return "user";
     }
-    
+
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String getNewForm(ModelMap model) {
         model.put("user", new User());
         return "create_user";
     }
-    
+
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String createUser(@ModelAttribute User user, ModelMap model) {
         usersDAO.save(user);
         return "redirect:/users";
     }
-    
+
     @RequestMapping(value = "/delete/{username}/", method = RequestMethod.GET)
     public String deleteUser(@PathVariable String username, ModelMap model) {
         User user = usersDAO.getUserByUsername(username);
         usersDAO.delete(user);
         return "redirect:/users";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(
+            @RequestParam(value = "error", required = false) String error,
+            @RequestParam(value = "logout", required = false) String logout, ModelMap model) {
+
+        if (error != null) {
+            model.put("error", "Invalid username and password!");
+        }
+
+        if (logout != null) {
+            model.put("msg", "You've been logged out successfully.");
+        }
+
+        return "login";
+
     }
 }
